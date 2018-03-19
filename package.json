@@ -1,6 +1,6 @@
 {
   "name": "postcss-media-query-parser",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "A tool for parsing media query lists.",
   "main": "index.bundle.js",
   "keywords": [
