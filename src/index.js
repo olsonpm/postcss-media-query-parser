@@ -1,1 +1,1 @@
-module.exports = require('./parse-media')
+export { default } from './parse-media'

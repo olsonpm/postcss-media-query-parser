@@ -1,5 +1,5 @@
 import test from 'tape'
-import parseMedia from '../src/parse-media'
+import parseMedia from '../src'
 
 test('Container.walk (`only screen and (color)`)', t => {
   const result = parseMedia('only screen and (color)')
