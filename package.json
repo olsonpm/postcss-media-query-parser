@@ -1,0 +1,73 @@
+{
+  "name": "postcss-media-query-parser",
+  "version": "0.3.0",
+  "description": "A tool for parsing media query lists.",
+  "main": "index.js",
+  "keywords": [
+    "postcss",
+    "postcss tool",
+    "media query",
+    "media query parsing"
+  ],
+  "author": "dryoma",
+  "license": "SEE LICENSE IN license.txt",
+  "homepage": "https://github.com/olsonpm/postcss-media-query-parser",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olsonpm/postcss-media-query-parser.git"
+  },
+  "bugs": {
+    "url": "https://github.com/olsonpm/postcss-media-query-parser/issues"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.42",
+    "@babel/core": "^7.0.0-beta.42",
+    "@babel/preset-env": "^7.0.0-beta.42",
+    "@babel/register": "^7.0.0-beta.42",
+    "babel-loader": "^8.0.0-beta.2",
+    "eslint": "^4.18.2",
+    "eslint-config-personal": "github:olsonpm/eslint-config-personal",
+    "eslint-plugin-import": "^2.9.0",
+    "prettier": "^1.11.1",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.6.0",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.12"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "tape -r babel-register \"src/**/__tests__/*.js\" | tap-spec",
+    "pretest": "npm run lint",
+    "prebuild": "rimraf dist",
+    "prepublish": "npm run build",
+    "build": "babel src --out-dir dist"
+  },
+  "eslintConfig": {
+    "extends": [
+      "personal",
+      "plugin:import/errors",
+      "plugin:import/warnings"
+    ],
+    "plugins": ["import"]
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "6"
+          }
+        }
+      ]
+    ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "semi": false
+  },
+  "dependencies": {
+    "postcss": "^6.0.19"
+  }
+}
