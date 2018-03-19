@@ -41,7 +41,7 @@ case "${command}" in
 
     cd "${releaseDir}" || exit
     version="$(jq --raw-output .version package.json)"
-    git add . && git commit -m "release ${version}" && git tag "${version}" && git push && git push olsonpm "${version}"
+    git add . && git commit -m "release ${version}" && git tag "${version}" && git push && git push origin "${version}"
     cd - || exit
     ;;
 
