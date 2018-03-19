@@ -1,4 +1,5 @@
 const path = require('path'),
+  UglifyJsPlugin = require('uglifyjs-webpack-plugin'),
   webpack = require('webpack')
 
 module.exports = {
@@ -19,6 +20,15 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
       },
+    ],
+  },
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        parallel: true,
+        sourceMap: true,
+        uglifyOptions: { keep_fnames: true },
+      }),
     ],
   },
   plugins: [new webpack.optimize.ModuleConcatenationPlugin()],
