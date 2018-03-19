@@ -30,6 +30,4 @@ function parseMedia(value) {
   })
 }
 
-parseMedia.wtf = 'webpack'
-
 export default parseMedia
